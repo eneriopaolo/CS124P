@@ -1,5 +1,7 @@
+import ImageRecognizer as IR
+
 def main():
-    print("test")
+    IR.take_picture()
 
 if __name__ == "__main__":
     main()
