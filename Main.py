@@ -1,5 +1,9 @@
 import ImageHandler as IH
 
+def register():
+    username = input("Enter username: ")
+    IH.take_and_save_picture(username)
+
 def main() -> None:
     while True:
         print("Note Taking App")
@@ -9,10 +13,9 @@ def main() -> None:
         user_input = input("Enter number: ")
 
         if user_input == "1":
-            username = input("Enter username: ")
-            IH.take_picture(username)
+            register()
         elif user_input == "2":
-            print("Login")   
+            print("Login")
         elif user_input == "3":
             break
         else:
