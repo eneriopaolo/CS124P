@@ -1,6 +1,7 @@
 import cv2 as cv
-import FileHandler as FH
 
+#Takes and save pictures to the Images Directory.
+#Images directory should first be checked if it exists.
 def take_and_save_picture(username: str):
     while True: 
         cam = cv.VideoCapture(0) 
@@ -17,7 +18,6 @@ def take_and_save_picture(username: str):
 
         if user_input == "no":
             file_name = f"{username}.png"
-            FH.check_or_create_dir()
             cv.imwrite(('Images/' + file_name), image)
             break
 

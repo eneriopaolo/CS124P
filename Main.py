@@ -3,6 +3,7 @@ import FileHandler as FH
 from notepad import noteApp
 
 def register():
+    FH.check_or_create_dir()
     while True:
         username = input("Enter username: ").lower()
         if FH.check_for_duplicates(username) == False:
