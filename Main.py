@@ -1,9 +1,15 @@
 import ImageHandler as IH
+import FileHandler as FH
 from notepad import noteApp
 
 def register():
-    username = input("Enter username: ").lower()
-    IH.take_and_save_picture(username)
+    while True:
+        username = input("Enter username: ").lower()
+        if FH.check_for_duplicates(username) == False:
+            IH.take_and_save_picture(username)
+            break
+        else:
+            print("Username is already taken.")
 
 def main() -> None:
     while True:
