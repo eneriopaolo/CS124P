@@ -1,4 +1,5 @@
 import ImageHandler as IH
+from notetaking import noteApp
 
 def register():
     username = input("Enter username: ").lower()
@@ -15,7 +16,8 @@ def main() -> None:
         if user_input == "1":
             register()
         elif user_input == "2":
-            print("Login")
+            username = input("Enter username: ")
+            noteApp(username) 
         elif user_input == "3":
             break
         else:
