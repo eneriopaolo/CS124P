@@ -1,9 +1,11 @@
 import os
 
+#Creates 'Images' folder if it does not exist
 def check_or_create_dir():
-    if os.path.exists("Images") == False:
+    dir = "Images"
+    if os.path.exists(dir) == False:
         try:
-            os.makedirs("Images")
+            os.makedirs(dir)
         except PermissionError:
             print("Permission denied: Unable to create directory.")
         except Exception as e:

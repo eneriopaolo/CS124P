@@ -1,7 +1,7 @@
 import ImageHandler as IH
 
 def register():
-    username = input("Enter username: ")
+    username = input("Enter username: ").lower()
     IH.take_and_save_picture(username)
 
 def main() -> None:
