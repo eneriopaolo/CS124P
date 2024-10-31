@@ -1,5 +1,5 @@
 import ImageHandler as IH
-from notetaking import noteApp
+from notepad import noteApp
 
 def register():
     username = input("Enter username: ").lower()
