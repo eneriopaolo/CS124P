@@ -1,5 +1,6 @@
 import ImageHandler as IH
 import FileHandler as FH
+import FRecog as FR
 from notepad import noteApp
 
 def register():
@@ -23,8 +24,15 @@ def main() -> None:
         if user_input == "1":
             register()
         elif user_input == "2":
-            username = input("Enter username: ")
-            noteApp(username) 
+            IH.take_and_save_pictureV2()
+            username = FR.GetUser()
+            #username = input("Enter username: ")
+            if (username == "None"):
+                print ("User not Found.")
+                continue
+            print (f"Welcome {username}")
+            noteApp(username)   
+
         elif user_input == "3":
             break
         else:
