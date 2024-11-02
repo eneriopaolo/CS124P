@@ -1,5 +1,11 @@
 # CS124P
 
+Important Versions to Install
+```
+pip install setuptools
+pip install numpy==1.26.4
+```
+
 Libraries Required for Program to Run:
 ```
 py -m pip install imutils
