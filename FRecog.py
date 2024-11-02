@@ -8,6 +8,28 @@ known_faces = []
 known_names = []
 
 
+
+# In FRecog.py
+
+def check_for_multiple_faces(image_path="AnonUser.png"):
+    # Load the image for face detection
+    image = cv2.imread(image_path)
+    rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    
+    # Detect faces in the image
+    boxes = face_recognition.face_locations(rgb, model="cnn")
+    
+    # Check conditions for multiple or no faces
+    if len(boxes) > 1:
+        print("Multiple Faces Detected. Try Again?")
+        return False
+    elif len(boxes) == 0:
+        print("No Face Detected. Try Again?")
+        return False
+    
+    return True  # Only one face detected
+
+
 def GetUser(): # Load and encode faces from the folder
     match_exist = False
     matched_name = ""
@@ -32,6 +54,9 @@ def GetUser(): # Load and encode faces from the folder
     boxes = face_recognition.face_locations(rgb, model="cnn")
     face_encodings = face_recognition.face_encodings(rgb, boxes)
     print("The boxes found in the image:", boxes)
+    
+
+    
 
     # Compare each face encoding found in the target image
     i = 0
