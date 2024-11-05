@@ -39,6 +39,10 @@ def main() -> None:
             register()
         elif user_input == "2":
             IH.take_and_save_pictureV2()
+            if not FR.check_for_multiple_faces("AnonUser.png"):
+                print("Login failed. Ensure only one face is present and try again.")
+                continue  # Retry registration
+
             username = FR.GetUser()
             #username = input("Enter username: ")
             if (username == "None"):
