@@ -4,6 +4,8 @@ import FRecog as FR
 import os
 from notepad import noteApp
 
+term_size = 30
+
 def register():
     FH.check_or_create_dir()
     while True:
@@ -25,17 +27,24 @@ def register():
             break  # Exit loop if face detection is valid
         else:
             print("Username is already taken.")
+    os.system('cls')
+    print('=' * 30)
+    print(f"Successly registered user {username}.")
 
 
 def main() -> None:
     while True:
+        print('=' * term_size)
         print("Note Taking App")
-        print("1) Register")
-        print("2) Login")
-        print("3) Exit Program")
+        print("[1] Register")
+        print("[2] Login")
+        print("[3] Exit Program")
+        print('-' * term_size)
         user_input = input("Enter number: ")
 
         if user_input == "1":
+            os.system('cls')
+            print('=' * term_size)
             register()
         elif user_input == "2":
             IH.take_and_save_pictureV2()
@@ -48,7 +57,9 @@ def main() -> None:
             if (username == "None"):
                 print ("User not Found.")
                 continue
-            print (f"Welcome {username}")
+            os.system('cls')
+            print('=' * term_size)
+            print (f"Welcome {username.title()}!")
             noteApp(username)   
 
         elif user_input == "3":
